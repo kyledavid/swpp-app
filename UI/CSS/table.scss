@@ -1,0 +1,45 @@
+/*=====================
+	#3.1 Table 
+=======================*/
+
+h2.zip-title {
+	float: right;
+	clear: both;
+	font-size: 24px;
+}
+
+table.rain-table {
+	float: right;
+	clear: both;
+	color: #40404c;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+
+	td.table-heading {
+		background: #40404c;
+		color: #fff;
+		font-size: 20px;
+
+		i {
+			margin-left: 5px;
+		}
+	}
+
+	td {
+		background: #f9f9f9;
+		font-size: 15px;
+		padding: 4px 8px;
+		border-right: 2px solid #40404c;
+	}
+
+	h4.table-site {
+		font-weight: 800;
+		font-size: 15px;
+	}
+
+	h3.rainfall {
+		font-weight: 800;
+		font-size: 18px;
+	}
+}
+

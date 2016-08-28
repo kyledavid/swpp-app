@@ -1,0 +1,10 @@
+/*=====================
+	#5 Media Queries
+=====================*/
+
+/* Small Devices, Tablets */
+@media (max-width : 768px) {
+	table.rain-table, h2.zip-title {
+		float: left;
+	}
+}
