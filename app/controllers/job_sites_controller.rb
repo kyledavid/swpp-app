@@ -1,14 +1,37 @@
 class JobSitesController < ApplicationController
+  
   before_action :set_job_site, only: [:show, :edit, :update, :destroy]
 
   # GET /job_sites
   # GET /job_sites.json
   def index
-    @job_sites = JobSite.all
+    
+            coordinates = '36.039524,-114.981720'
+            uri = URI('https://earthnetworks.azure-api.net/data/observations/v1/current?')
+            uri.query = URI.encode_www_form({
+                # Request parameters
+                'verbose' => 'TRUE',
+                'location' => coordinates,
+                'locationtype' => 'latitudelongitude'
+            })
+            
+            request = Net::HTTP::Get.new(uri.request_uri)
+            # Request headers
+            request['Ocp-Apim-Subscription-Key'] = 'c830c36f4c724b42bb14486214344533'
+            # Request body
+            request.body = "{body}"
+            
+            response = Net::HTTP.start(uri.host, uri.port, :use_ssl => uri.scheme == 'https') do |http|
+                http.request(request)
+            
+           end
+          
+           @coordinates = coordinates
+           @testresults = JSON.parse(response.body)
+           @job_sites = JobSite.all
   end
-
-  # GET /job_sites/1
-  # GET /job_sites/1.json
+    
+ 
   def show
   end
 
