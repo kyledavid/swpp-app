@@ -1,0 +1,28 @@
+/*=====================
+	#3 Front
+=======================*/
+
+div.page-wrapper {
+	position: relative;
+	z-index: 1;
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 150px;
+		opacity: .05;
+		z-index: -1;
+		background: url('http://www.themesltd.com/headers2/large_drawn_rain_drops.png');
+	}
+}
+
+section.container {
+	padding-top: 40px;
+
+	position: relative;
+	z-index: 1;
+
+}
