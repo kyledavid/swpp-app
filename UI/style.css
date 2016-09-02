@@ -15,6 +15,19 @@
 @font-face {
   font-family: 'Langdon';
   src: url(fonts/langdon.otf); }
+
+@font-face {
+  font-family: "Lato-Light";
+  src: url(fonts/Lato-Light.ttf); }
+
+@font-face {
+  font-family: "Lato-Regular";
+  src: url(fonts/Lato-Regular.ttf); }
+
+@font-face {
+  font-family: "Lato-Bold";
+  src: url(fonts/Lato-Bold.ttf); }
+
 /*=====================
 	#2 Header
 =======================*/
@@ -45,17 +58,19 @@ a.profile-link {
 =======================*/
 div.page-wrapper {
   position: relative;
-  z-index: 1; }
-  div.page-wrapper:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 150px;
-    opacity: .05;
-    z-index: -1;
-    background: url("http://www.themesltd.com/headers2/large_drawn_rain_drops.png"); }
+  z-index: 1;
+  background: #e8e8e8;
+  /* &:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 500px;
+		opacity: .05;
+		z-index: -1;
+		background: url('img/large_drawn_rain_drops.png');
+	} */ }
 
 section.container {
   padding-top: 40px;
@@ -65,17 +80,25 @@ section.container {
 /*=====================
 	#3.1 Table 
 =======================*/
+div.chart-panel {
+  background: #fff;
+  width: 100%;
+  padding-bottom: 20px;
+  margin-bottom: 15px; }
+
 h2.zip-title {
-  float: right;
+  float: left;
   clear: both;
-  font-size: 24px; }
+  font-size: 28px;
+  font-family: "Lato-Regular", sans-serif;
+  margin-left: 24px; }
 
 table.rain-table {
-  float: right;
-  clear: both;
+  width: 100%;
   color: #40404c;
   border-top-left-radius: 10px;
-  border-top-right-radius: 10px; }
+  border-top-right-radius: 10px;
+  font-family: "Lato-Regular", sans-serif; }
   table.rain-table td.table-heading {
     background: #40404c;
     color: #fff;
@@ -83,22 +106,38 @@ table.rain-table {
     table.rain-table td.table-heading i {
       margin-left: 5px; }
   table.rain-table td {
-    background: #f9f9f9;
     font-size: 15px;
-    padding: 4px 8px;
-    border-right: 2px solid #40404c; }
+    padding: 4px 0 4px 25px; }
   table.rain-table h4.table-site {
-    font-weight: 800;
-    font-size: 15px; }
+    font-family: "Lato-Bold", sans-serif;
+    font-size: 18px;
+    margin: 3px 0; }
   table.rain-table h3.rainfall {
     font-weight: 800;
-    font-size: 18px; }
+    font-size: 20px;
+    color: #85d8ff; }
 
 /*=====================
 	#3.2 Calendar
 =======================*/
 h2.date {
-  font-size: 30px; }
+  font-size: 30px;
+  background: #a8a8b9;
+  text-align: center;
+  color: #fff;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-family: "Lato-Regular", sans-serif; }
+
+div.calendar-panel {
+  text-align: center;
+  background: #fff;
+  width: 100%;
+  padding-bottom: 35px; }
+
+#datepicker {
+  margin-top: 50px;
+  display: inline-block; }
 
 /*=====================
 	#4 Login
@@ -153,5 +192,3 @@ section.login {
 @media (max-width: 768px) {
   table.rain-table, h2.zip-title {
     float: left; } }
-
-/*# sourceMappingURL=style.css.map */

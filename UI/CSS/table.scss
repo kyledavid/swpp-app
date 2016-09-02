@@ -2,18 +2,28 @@
 	#3.1 Table 
 =======================*/
 
+div.chart-panel {
+	background: #fff;
+	width: 100%;
+	padding-bottom: 20px;
+	margin-bottom: 15px;
+}
+
 h2.zip-title {
-	float: right;
+	float: left;
 	clear: both;
-	font-size: 24px;
+	font-size: 28px;
+	font-family: "Lato-Regular", sans-serif;
+	margin-left: 24px;
+
 }
 
 table.rain-table {
-	float: right;
-	clear: both;
+	width: 100%;
 	color: #40404c;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
+	font-family: "Lato-Regular", sans-serif;
 
 	td.table-heading {
 		background: #40404c;
@@ -26,20 +36,20 @@ table.rain-table {
 	}
 
 	td {
-		background: #f9f9f9;
 		font-size: 15px;
-		padding: 4px 8px;
-		border-right: 2px solid #40404c;
+		padding: 4px 0 4px 25px;
 	}
 
 	h4.table-site {
-		font-weight: 800;
-		font-size: 15px;
+		font-family: "Lato-Bold", sans-serif;
+		font-size: 18px;
+		margin: 3px 0;
 	}
 
 	h3.rainfall {
 		font-weight: 800;
-		font-size: 18px;
+		font-size: 20px;
+		color: #85d8ff;
 	}
 }
 

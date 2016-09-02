@@ -47,222 +47,178 @@
 <div class="page-wrapper">
 	<section class="container">
 		<div class="row">
-			<div class="col col-sm-4">
-				<h2 class="date">Rainfall for 
-					<span id="selected-date">Today 8/28/2016</span>
-				</h2>
+			<div class="col col-sm-5">
+				<div class="calendar-panel">
+					<h2 class="date">Rainfall for 
+						<span id="selected-date">Today 8/28/2016</span>
+					</h2>
 
-				<div id="datepicker"></div>
-				 
-				<script>
-				$( "#datepicker" ).datepicker( {
-					onSelect: function(date) {
-						$("#selected-date").text(date);
-					}
-				});
-				</script>
-
+					<div id="datepicker"></div>
+					 
+					<script>
+					$( "#datepicker" ).datepicker( {
+						onSelect: function(date) {
+							$("#selected-date").text(date);
+						}
+					});
+					</script>
+				</div><!-- calendar panel -->
 			</div>
 
-			<div class="col col-md-4 col-sm-8">
-				<h2 class="zip-title">89108 Rainfall</h2>
-			
-				<table class="rain-table">
-					<tr>
-						<td class="table-heading">
-							Site
-						</td>
+			<div class="col col-md-7 col-sm-7">
 
-						<td class="table-heading">
-							Rainfall  <i class="fa fa-caret-up"> </i>
-						</td>
-					</tr>
+				<div class="chart-panel">
+					<h2 class="zip-title">89108 Rainfall</h2>
+				
+					<table class="rain-table">
+						<tr>
+							<td class="table-heading">
+								Site
+							</td>
 
-					<tr>
-						<td>
-							<h4 class="table-site">Ubuntu</h4>
-							123 Fake Street 89147
-						</td>
+							<td class="table-heading">
+								Rainfall  <i class="fa fa-caret-up"> </i>
+							</td>
+						</tr>
 
-						<td>
-							<h3 class="rainfall">.03 in.</h3>
-						</td>
-					</tr>
+						<tr>
+							<td>
+								<h4 class="table-site">Ubuntu</h4>
+								123 Fake Street 89147
+							</td>
 
-					<tr>
-						<td>
-							<h4 class="table-site">Ubuntu</h4>
-							123 Fake Street 89147
-						</td>
+							<td>
+								<h3 class="rainfall">.03 in.</h3>
+							</td>
+						</tr>
 
-						<td>
-							<h3 class="rainfall">.03 in.</h3>
-						</td>
-					</tr>
+						<tr>
+							<td>
+								<h4 class="table-site">Ubuntu</h4>
+								123 Fake Street 89147
+							</td>
 
-					<tr>
-						<td>
-							<h4 class="table-site">Ubuntu</h4>
-							123 Fake Street 89147
-						</td>
+							<td>
+								<h3 class="rainfall">.03 in.</h3>
+							</td>
+						</tr>
 
-						<td>
-							<h3 class="rainfall">.03 in.</h3>
-						</td>
-					</tr>
+						<tr>
+							<td>
+								<h4 class="table-site">Ubuntu</h4>
+								123 Fake Street 89147
+							</td>
 
-
-				</table>
-
-			<h2 class="zip-title">89108 Rainfall</h2>
-			
-			<table class="rain-table">
-				<tr>
-					<td class="table-heading">
-						Site
-					</td>
-
-					<td class="table-heading">
-						Rainfall  <i class="fa fa-caret-up"> </i>
-					</td>
-				</tr>
-
-				<tr>
-					<td>
-						<h4 class="table-site">Ubuntu</h4>
-						123 Fake Street 89147
-					</td>
-
-					<td>
-						<h3 class="rainfall">.03 in.</h3>
-					</td>
-				</tr>
-
-				<tr>
-					<td>
-						<h4 class="table-site">Ubuntu</h4>
-						123 Fake Street 89147
-					</td>
-
-					<td>
-						<h3 class="rainfall">.03 in.</h3>
-					</td>
-				</tr>
-
-				<tr>
-					<td>
-						<h4 class="table-site">Ubuntu</h4>
-						123 Fake Street 89147
-					</td>
-
-					<td>
-						<h3 class="rainfall">.03 in.</h3>
-					</td>
-				</tr>
+							<td>
+								<h3 class="rainfall">.03 in.</h3>
+							</td>
+						</tr>
 
 
-			</table>
+					</table>
+				</div><!-- chart panel -->
+				
+				<div class="chart-panel">
+					<h2 class="zip-title">89108 Rainfall</h2>
+				
+					<table class="rain-table">
+						<tr>
+							<td class="table-heading">
+								Site
+							</td>
 
-			</div><!-- col -->
+							<td class="table-heading">
+								Rainfall  <i class="fa fa-caret-up"> </i>
+							</td>
+						</tr>
 
-			<div class="col col-md-4">
-				<h2 class="zip-title">89108 Rainfall</h2>
-			
-				<table class="rain-table">
-					<tr>
-						<td class="table-heading">
-							Site
-						</td>
+						<tr>
+							<td>
+								<h4 class="table-site">Ubuntu</h4>
+								123 Fake Street 89147
+							</td>
 
-						<td class="table-heading">
-							Rainfall  <i class="fa fa-caret-up"> </i>
-						</td>
-					</tr>
+							<td>
+								<h3 class="rainfall">.03 in.</h3>
+							</td>
+						</tr>
 
-					<tr>
-						<td>
-							<h4 class="table-site">Ubuntu</h4>
-							123 Fake Street 89147
-						</td>
+						<tr>
+							<td>
+								<h4 class="table-site">Ubuntu</h4>
+								123 Fake Street 89147
+							</td>
 
-						<td>
-							<h3 class="rainfall">.03 in.</h3>
-						</td>
-					</tr>
+							<td>
+								<h3 class="rainfall">.03 in.</h3>
+							</td>
+						</tr>
 
-					<tr>
-						<td>
-							<h4 class="table-site">Ubuntu</h4>
-							123 Fake Street 89147
-						</td>
+						<tr>
+							<td>
+								<h4 class="table-site">Ubuntu</h4>
+								123 Fake Street 89147
+							</td>
 
-						<td>
-							<h3 class="rainfall">.03 in.</h3>
-						</td>
-					</tr>
-
-					<tr>
-						<td>
-							<h4 class="table-site">Ubuntu</h4>
-							123 Fake Street 89147
-						</td>
-
-						<td>
-							<h3 class="rainfall">.03 in.</h3>
-						</td>
-					</tr>
-
-
-				</table>
-
-			<h2 class="zip-title">89108 Rainfall</h2>
-			
-			<table class="rain-table">
-				<tr>
-					<td class="table-heading">
-						Site
-					</td>
-
-					<td class="table-heading">
-						Rainfall  <i class="fa fa-caret-up"> </i>
-					</td>
-				</tr>
-
-				<tr>
-					<td>
-						<h4 class="table-site">Ubuntu</h4>
-						123 Fake Street 89147
-					</td>
-
-					<td>
-						<h3 class="rainfall">.03 in.</h3>
-					</td>
-				</tr>
-
-				<tr>
-					<td>
-						<h4 class="table-site">Ubuntu</h4>
-						123 Fake Street 89147
-					</td>
-
-					<td>
-						<h3 class="rainfall">.03 in.</h3>
-					</td>
-				</tr>
-
-				<tr>
-					<td>
-						<h4 class="table-site">Ubuntu</h4>
-						123 Fake Street 89147
-					</td>
-
-					<td>
-						<h3 class="rainfall">.03 in.</h3>
-					</td>
-				</tr>
+							<td>
+								<h3 class="rainfall">.03 in.</h3>
+							</td>
+						</tr>
 
 
-			</table>
+					</table>
+				</div><!-- chart panel -->
+
+				<div class="chart-panel">
+					<h2 class="zip-title">89108 Rainfall</h2>
+				
+					<table class="rain-table">
+						<tr>
+							<td class="table-heading">
+								Site
+							</td>
+
+							<td class="table-heading">
+								Rainfall  <i class="fa fa-caret-up"> </i>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<h4 class="table-site">Ubuntu</h4>
+								123 Fake Street 89147
+							</td>
+
+							<td>
+								<h3 class="rainfall">.03 in.</h3>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<h4 class="table-site">Ubuntu</h4>
+								123 Fake Street 89147
+							</td>
+
+							<td>
+								<h3 class="rainfall">.03 in.</h3>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<h4 class="table-site">Ubuntu</h4>
+								123 Fake Street 89147
+							</td>
+
+							<td>
+								<h3 class="rainfall">.03 in.</h3>
+							</td>
+						</tr>
+
+
+					</table>
+				</div><!-- chart panel -->
 
 			</div><!-- col -->
 
