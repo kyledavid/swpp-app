@@ -17,19 +17,19 @@
 =======================*/
 @font-face {
   font-family: 'Langdon';
-  src: url(langdon.otf); }
+  src: url('langdon.otf'); }
 
 @font-face {
   font-family: "Lato-Light";
-  src: url(Lato-Light.ttf); }
+  src: url('Lato-Light.ttf'); }
 
 @font-face {
   font-family: "Lato-Regular";
-  src: url(Lato-Regular.ttf); }
+  src: url('Lato-Regular.ttf'); }
 
 @font-face {
   font-family: "Lato-Bold";
-  src: url(Lato-Bold.ttf); }
+  src: url('Lato-Bold.ttf'); }
 
 /*=====================
 	#2 Header
