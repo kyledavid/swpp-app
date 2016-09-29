@@ -1,4 +1,11 @@
 var ChartRow = React.createClass({
+    _rainNumber() {
+        if (this.props.site.rain){
+            return (<span>{this.props.site.rain} in.</span>);
+        }
+        
+        return (<span></span>);
+    },
     render() {
         return (
                 <tr>
@@ -9,20 +16,10 @@ var ChartRow = React.createClass({
     
     				<td>
     					<h3 className="rainfall">
-    					    <RainNumber rain={this.props.site.rain} />
+    					    {this._rainNumber()}
     					</h3>
     				</td>
     			</tr>
             );
-    }
-});
-
-var RainNumber = React.createClass({
-    render() {
-        if (this.props.rain){
-            return (<span>{this.props.rain} in.</span>);
-        }
-        
-        return (<span></span>);
     }
 });
