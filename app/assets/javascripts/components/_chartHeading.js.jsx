@@ -7,7 +7,7 @@ var ChartHeading = React.createClass({
     					Site
     				</td>
     
-    				<td className="table-heading">
+    				<td className="table-heading untouchable">
     					Rainfall  <ChartFlowButton togg={this.props.descTogg}/>
     				</td>
     			</tr>

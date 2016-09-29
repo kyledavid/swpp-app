@@ -7,6 +7,7 @@ var ChartRow = React.createClass({
         return (<span></span>);
     },
     render() {
+        
         return (
                 <tr>
     				<td>

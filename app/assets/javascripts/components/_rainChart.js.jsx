@@ -1,4 +1,4 @@
-var compareDesc = function(a, b) {
+var compareAsc = function(a, b) {
     if (a.rain > b.rain ){
         return 1;
     } else if (a.rain < b.rain) {
@@ -8,7 +8,7 @@ var compareDesc = function(a, b) {
     }
 }
 
-var compareAsc = function(a, b) {
+var compareDesc = function(a, b) {
     if (a.rain > b.rain ){
         return -1;
     } else if (a.rain < b.rain) {
@@ -27,16 +27,16 @@ var RainChart = React.createClass({
     },
     _handleDescToggle() {
         this.setState({desc: !this.state.desc});
-        console.log(this.state.desc);
     },
-    _sortSites(sites) {
+    _sortSites() {
+        var sites = this.props.sites;
+
         if(this.state.desc){
-            sites.sort(compareDesc);
+            sites = sites.sort(compareDesc);
         } else {
-            sites.sort(compareAsc);
+            sites = sites.sort(compareAsc);
         }
         
-        return sites;
     },
     _createChartRows(sites) {
         var comps = [];
@@ -47,12 +47,13 @@ var RainChart = React.createClass({
         
         return comps;
     },
-    render() {
-        var sites = this.props.sites;
-        var comps = [];
+    componentWillMount() {
         
-        sites = this._sortSites(sites);
-        comps = this._createChartRows(sites);
+    },
+    render() {
+        var comps = [];
+        this._sortSites();
+        comps = this._createChartRows(this.props.sites);
         
         return (
         	<div className="chart-panel">
