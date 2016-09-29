@@ -25,7 +25,7 @@ var RainChart = React.createClass({
           desc: true,
       };  
     },
-    handleDescToggle() {
+    _handleDescToggle() {
         this.setState({desc: !this.state.desc});
         console.log(this.state.desc);
     },
@@ -59,7 +59,7 @@ var RainChart = React.createClass({
         		<h2 className="zip-title">Rainfall</h2>
         		<table className="rain-table">
         			
-        			<ChartHeading descTogg={this.handleDescToggle}></ChartHeading>
+        			<ChartHeading descTogg={this._handleDescToggle}></ChartHeading>
         			<tbody>{comps}</tbody>
 
         		</table>
