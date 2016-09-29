@@ -1,0 +1,17 @@
+<div class="col col-sm-5">
+	<div class="calendar-panel">
+		<h2 class="date">Rainfall for 
+			<span id="selected-date">Today 8/28/2016</span>
+		</h2>
+
+		<div id="datepicker"></div>
+		 
+		<script>
+		$( "#datepicker" ).datepicker( {
+			onSelect: function(date) {
+				$("#selected-date").text(date);
+			}
+		});
+		</script>
+	</div><!-- calendar panel -->
+</div><!-- col -->
