@@ -1,4 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<%= @job_site.job_name %><br>
+<%= @job_site.job_number %><br>
+<%= @job_site.zip_code %><br>
+<%= @job_site.cross_street %><br>
+<%= @job_site.abbr %><br>
+
 <%= link_to 'Edit', edit_job_site_path(@job_site) %> |
 <%= link_to 'Back', job_sites_path %>
