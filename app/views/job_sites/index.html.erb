@@ -1,10 +1,56 @@
-<p id="notice"><%= notice %></p>
-
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
 <%= render 'chartHead' %>
 <body>
 	<%= render 'header' %>
+=======
+<head>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet" href="j-ui/jquery-ui.structure.min.css">
+
+<link rel="stylesheet" href="j-ui/jquery-ui.theme.min.css">
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+
+
+<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/locale/af.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script   src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"   integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="   crossorigin="anonymous"></script>
+
+
+
+<title>Topnotch Rainfall Monitor</title>
+
+</head>
+<body>
+<header class="site-header">
+	<div class="container header-contain">
+		<h1 id="title">TOPNOTCH RAINFALL MONITOR</h1>
+
+		<a class="profile-link" href="index.html.erb">Log Out</a>
+		<a class="profile-link" href="#">Welcome user_1
+
+		</a>
+
+	</div>
+
+</header>
+>>>>>>> 0f9a534f65eaa0731b085f3ded54567dbfc106de
 <div class="page-wrapper">
   
 	<section class="container">
@@ -17,7 +63,10 @@
 	</section>
 </div>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0f9a534f65eaa0731b085f3ded54567dbfc106de
 
 
 
@@ -33,20 +82,43 @@
   </thead>
 
   <tbody>
-    <% @job_sites.each do |job_site| %>
-      <tr>
-        <td><%= link_to 'Show', job_site %></td>
-        <td><%= link_to 'Edit', edit_job_site_path(job_site) %></td>
-        <td><%= link_to 'Destroy', job_site, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    <% @job.each do |job_site| %>
+      
+	      <tr>
+	      	<td><%= job_site.job_name %></td>
+	      </tr>
+	      <tr>
+			<td><%= job_site.job_number %></td>
+		  </tr>
+		  <tr>
+		  	<td><%= job_site.abbr %></td>
+		  </tr>
+		  <tr>
+		  	<td><%= job_site.zip_code %></td>
+		  </tr>
+		  <tr>
+		 	<td><%= job_site.cross_street %></td>
+		  </tr>
+		  <tr>
+	        <td><%= link_to('Show', job_site_path(job_site)) %></td>
+	        <td><%= link_to('Edit', edit_job_site_path(job_site)) %></td>
+	        <td><%= link_to('Delete', :action => 'destroy', :id => job_site.id) %></td>
+	      </tr>
+	<%end%>
   </tbody>
 </table>
 
 <br>
-The Rainrate for [<%=@coordinates%>], (Henderson, NV) is <%=@testresults['rainRate']%>
+The Rainrate for <%=@coordinates%> (Henderson, NV) is <%=@testresults['rainRate']%>
 <%= link_to 'New Job site', new_job_site_path %>
+
+<!-- ['rainRate'] -->
+
+
+
+
+
 
 
 </body>
-</html>
+</html>	

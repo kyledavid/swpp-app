@@ -5,11 +5,15 @@ class JobSitesController < ApplicationController
   # GET /job_sites
   # GET /job_sites.json
   def index
-    
-            coordinates = '36.039524,-114.981720'
-            uri = URI('https://earthnetworks.azure-api.net/data/observations/v1/current?')
-            uri.query = URI.encode_www_form({
-                # Request parameters
+=begin
+             jb = JobSite.where(:id => '3')
+            
+           
+           
+           coordinates = jb.pluck(:latitude, :longitude).join(', ')
+           uri = URI('https://earthnetworks.azure-api.net/data/observations/v1/current?')
+           uri.query = URI.encode_www_form({
+               # Request parameters
                 'verbose' => 'TRUE',
                 'location' => coordinates,
                 'locationtype' => 'latitudelongitude'
@@ -28,7 +32,39 @@ class JobSitesController < ApplicationController
           
            @coordinates = coordinates
            @testresults = JSON.parse(response.body)
-           @job_sites = JobSite.all
+           @job = JobSite.all
+=end 
+
+
+
+@job = JobSite.all
+            @job.each do |jb|
+            lat = jb.latitude
+            lon = jb.longitude
+            coordinates = "#{lat}, #{lon}"
+            uri = URI('https://earthnetworks.azure-api.net/data/observations/v1/current?')
+            uri.query = URI.encode_www_form({
+                # Request parameters
+                'verbose' => 'TRUE',
+                'location' => coordinates,
+                'locationtype' => 'latitudelongitude'
+            })
+            
+            request = Net::HTTP::Get.new(uri.request_uri)
+            # Request headers
+            request['Ocp-Apim-Subscription-Key'] = 'c830c36f4c724b42bb14486214344533'
+            # Request body
+            request.body = "{body}"
+            
+            response = Net::HTTP.start(uri.host, uri.port, :use_ssl => uri.scheme == 'https') do |http|
+                http.request(request)
+            
+           end
+           @coordinates = coordinates
+           @testresults = JSON.parse(response.body)
+         end
+         
+
   end
     
  
@@ -77,10 +113,16 @@ class JobSitesController < ApplicationController
   # DELETE /job_sites/1
   # DELETE /job_sites/1.json
   def destroy
-    @job_site.destroy
-    respond_to do |format|
-      format.html { redirect_to job_sites_url, notice: 'Job site was successfully destroyed.' }
-      format.json { head :no_content }
+    if @job_site.destroy
+      redirect_to(:action => 'index')
+    
+        #respond_to do |format|
+        #format.html { redirect_to job_sites_url, notice: 'Job site was successfully destroyed.' }
+        #format.json { head :no_content }
+      #end
+    #else
+      #redirect_to(:action => 'show')
+        
     end
   end
 
@@ -92,6 +134,6 @@ class JobSitesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_site_params
-      params.fetch(:job_site, {})
+      params.fetch(:job_site,{}).permit(:job_name, :job_number, :zip_code, :cross_street, :abbr)
     end
 end

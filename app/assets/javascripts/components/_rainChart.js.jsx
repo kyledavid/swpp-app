@@ -26,7 +26,8 @@ var RainChart = React.createClass({
       };  
     },
     _handleDescToggle() {
-        this.setState({desc: !this.state.desc});
+        this.state.desc = !this.state.desc;
+        this.setState({desc:  this.state.desc});
     },
     _sortSites() {
         var sites = this.props.sites;
@@ -47,12 +48,15 @@ var RainChart = React.createClass({
         
         return comps;
     },
-    componentWillMount() {
-        
+    componentWillMount(){
+        this._sortSites();  
+    },
+    componentWillUpdate() {
+        this._sortSites();
     },
     render() {
         var comps = [];
-        this._sortSites();
+        
         comps = this._createChartRows(this.props.sites);
         
         return (
