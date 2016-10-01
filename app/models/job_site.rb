@@ -21,7 +21,7 @@ class JobSite < ActiveRecord::Base
             
             request = Net::HTTP::Get.new(uri.request_uri)
             # Request headers
-            request['Ocp-Apim-Subscription-Key'] = 'c830c36f4c724b42bb14486214344533'
+            request['Ocp-Apim-Subscription-Key'] = 'c42abcdd8b2540d0af0e468f8f4ca8e4'
             # Request body
             request.body = "{body}"
             
@@ -32,10 +32,19 @@ class JobSite < ActiveRecord::Base
            results = JSON.parse(response.body)
            @input = Rain.new(:amount => results['rainRate'], :job_sites_id => jb.id )
            @input.save
+           sleep(2)
          end
         
     end
    
+   
+    
+       
+       
+       
+       
+       
+       
 end
           
        

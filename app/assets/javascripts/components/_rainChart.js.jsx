@@ -69,7 +69,6 @@ var RainChart = React.createClass({
 
         		</table>
         		<pre>{JSON.stringify(this.state, null, 2)}<br/>{JSON.stringify(this.props, null, 2)}</pre>
-        		<pre></pre>
         	</div>// chart panel
             );
     }

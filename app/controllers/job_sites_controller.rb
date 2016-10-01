@@ -37,10 +37,12 @@ class JobSitesController < ApplicationController
 
 
 
-@job = JobSite.all
+  @job = JobSite.all
+  @jjb = JobSite.where(:id => "4")
             @job.each do |jb|
             lat = jb.latitude
             lon = jb.longitude
+            sleep(1)
             coordinates = "#{lat}, #{lon}"
             uri = URI('https://earthnetworks.azure-api.net/data/observations/v1/current?')
             uri.query = URI.encode_www_form({
@@ -52,7 +54,7 @@ class JobSitesController < ApplicationController
             
             request = Net::HTTP::Get.new(uri.request_uri)
             # Request headers
-            request['Ocp-Apim-Subscription-Key'] = 'c830c36f4c724b42bb14486214344533'
+            request['Ocp-Apim-Subscription-Key'] = 'c42abcdd8b2540d0af0e468f8f4ca8e4'
             # Request body
             request.body = "{body}"
             
@@ -63,8 +65,17 @@ class JobSitesController < ApplicationController
            @coordinates = coordinates
            @testresults = JSON.parse(response.body)
          end
+         @rain = Rain.all
+         @jobobject = JobSite.all.to_json
+         @rainobject = Rain.all.to_json
+                
+        
+                
+        
+           
+        
+          
          
-
   end
     
  
