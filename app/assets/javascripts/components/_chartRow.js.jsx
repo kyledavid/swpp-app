@@ -1,26 +1,25 @@
-var ChartRow = React.createClass({
-    _rainNumber() {
-        if (this.props.site.rain){
-            return (<span>{this.props.site.rain} in.</span>);
-        }
-        
-        return (<span></span>);
-    },
+const RainNumber = React.createClass({
     render() {
         
-        return (
-                <tr>
-    				<td>
-    					<h4 className="table-site">{this.props.site.name}</h4>
-    					{this.props.site.address}
-    				</td>
-    
-    				<td>
-    					<h3 className="rainfall">
-    					    {this._rainNumber()}
-    					</h3>
-    				</td>
-    			</tr>
-            );
+        if (this.props.rain) {
+                return (<span>{this.props.rain} in.</span>);
+            }
+            
+        return (<span></span>);
     }
-});
+}); 
+
+const ChartRow = ({site}) => (
+    <tr>
+		<td>
+			<h4 className="table-site">{site.name}</h4>
+			{site.address}
+		</td>
+
+		<td>
+			<h3 className="rainfall">
+			    <RainNumber rain={site.rain}/>
+			</h3>
+		</td>
+	</tr>
+)
