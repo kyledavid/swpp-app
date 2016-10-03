@@ -16,8 +16,8 @@ var testSites = [
 // **********************************************************************
 
 
-const Body = props => (
+const Body = ({sites}) => (
      <div className="col col-md-7 col-sm-7">
-          <RainChart sites={testSites}></RainChart> 
+          <RainChart sites={sites}></RainChart> 
      </div>
   );
