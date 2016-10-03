@@ -19,7 +19,7 @@ var compareDesc = function(a, b) {
 }
 
 
-var RainChart = React.createClass({
+const RainChart = React.createClass({
     getInitialState() {
       return {
           desc: true,
