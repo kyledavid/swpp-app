@@ -1,5 +1,8 @@
 {
   "name": "something",
+  "scripts": {
+    "test": "mocha"
+  },
   "dependencies": {
     "react": "^15.3.2",
     "react-dom": "^15.3.2"
@@ -7,5 +10,9 @@
   "license": "MIT",
   "engines": {
     "node": ">= 0.10"
+  },
+  "devDependencies": {
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.1"
   }
 }
