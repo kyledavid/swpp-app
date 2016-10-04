@@ -4,8 +4,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Gemfile
-# Use datepicker for Date picking
-gem 'bootstrap-datepicker-rails'
 # Use React for Reacting
 gem 'react-rails'
 # Use SCSS for stylesheets
