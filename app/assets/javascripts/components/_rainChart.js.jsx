@@ -68,9 +68,10 @@ const RainChart = React.createClass({
         			<tbody>{comps}</tbody>
 
         		</table>
-        		<pre>{JSON.stringify(this.state, null, 2)}<br/>{JSON.stringify(this.props, null, 2)}</pre>
+        		 
         	</div>// chart panel
             );
     }
 });
 
+// <pre>{JSON.stringify(this.state, null, 2)}<br/>{JSON.stringify(this.props, null, 2)}</pre> goes above table
