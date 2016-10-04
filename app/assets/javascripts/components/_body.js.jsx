@@ -3,14 +3,14 @@
 // ************** USE TO TEST FRONT END SORTING ***********************
 
 var testSites = [
-            {name: 'buntu', address: '2383 butt strt', rain: .2, zipcode: 89118},
-            {name: 'art', address: '2355 tf', rain: .1, zipcode: 89118},
-            {name: ' ARST house', address: '727 rainless ave', rain: null, zipcode: 89118},
-            {name: 'wtftff', address: '2383 tarf strt', rain: .7, zipcode: 89118},
-            {name: 'tsvx', address: '234 butt strt', rain: .4, zipcode: 89312},
-            {name: 'wffff', address: '2383 arst strt', rain: .5, zipcode: 89118},
-            {name: ' rain house', address: '2383 rainless ave', rain: null, zipcode: 89312},
-            {name: ' tstffta house', address: '6263 rainless ave', rain: null, zipcode: 89312},
+            {name: 'buntu', address: '2383 butt strt, 89118', rain: .2, zipcode: 89118},
+            {name: 'art', address: '2355 tf, 89118', rain: .1, zipcode: 89118},
+            {name: ' ARST house', address: '727 rainless ave, 89118', rain: null, zipcode: 89118},
+            {name: 'wtftff', address: '2383 tarf strt, 89118', rain: .7, zipcode: 89118},
+            {name: 'tsvx', address: '234 butt strt, 89312', rain: .4, zipcode: 89312},
+            {name: 'wffff', address: '2383 arst strt, 89118', rain: .5, zipcode: 89118},
+            {name: ' rain house', address: '2383 rainless ave, 89312', rain: null, zipcode: 89312},
+            {name: ' tstffta house', address: '6263 rainless ave, 89312', rain: null, zipcode: 89312},
         ];
         
 var zipList = [89118, 89312];

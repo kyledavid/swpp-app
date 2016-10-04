@@ -56,12 +56,13 @@ const RainChart = React.createClass({
     },
     render() {
         var comps = [];
+        var zip = this.props.sites[0].zipcode;
         
         comps = this._createChartRows(this.props.sites);
         
         return (
         	<div className="chart-panel">
-        		<h2 className="zip-title">Rainfall</h2>
+        		<h2 className="zip-title">Rainfall for {this.props.sites[0].zipcode}</h2>
         		<table className="rain-table">
         			
         			<ChartHeading descTogg={this._handleDescToggle}></ChartHeading>
