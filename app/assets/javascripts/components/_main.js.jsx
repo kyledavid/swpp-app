@@ -45,7 +45,7 @@ var stripDownSites = function(updatedSites) {
 }
 // get the average rate of rain based on a set of rain readings for a particular site
 var averageRainFall = function(rains) {
-    
+    console.log('rains:' + rains);
     var average = rains.reduce(function(p, c){
         return p + Number(c);
     });
