@@ -24,21 +24,31 @@ var counter = 0;
 //      </div>
 //   );
 
-const sortSites = (sites) => {
-    var zipSites = [];
-    
-    // for each zip code, return the sites assigned to that zipcode
-    zipSites = zipList.map(zCode => (sites.filter(site => (site.zipcode === zCode))));
-    
-    // returns the sites as 2d array divided by zip code
-    return zipSites;
-    
-}
-
 const Body = React.createClass({
-    _getComps(sitesByZip) {
+    _sortSitesByZip(){
+        var zipSites = [];
+    
+        // for each zip code, return the sites assigned to that zipcode
+        zipSites = zipList.map(zCode => (testSites.filter(site => (site.zipcode === zCode))));
         
-        let components = sitesByZip.map(zipGroup => {
+        // returns the sites as 2d array divided by zip code
+        return zipSites;
+    },
+    getInitialState(){
+        return {
+            zipDivide: true,
+            
+        };
+    },
+    _getSiteList(){
+        if (this.state.zipDivide) {
+            return this._sortSitesByZip();
+        }
+        
+        return [testSites];
+    },
+    _getComps() {
+        let components = this._getSiteList().map(zipGroup => {
            let zip = zipGroup[0].zipcode;
            var key = zip + "chart";
 
@@ -47,13 +57,10 @@ const Body = React.createClass({
             );
         });
         
-        console.log(components[0]);
         return components;
     },
     render() {
-        var zipSites = sortSites(testSites);
-        var comps = this._getComps(zipSites);
-        console.log('comps: ' + comps);
+        var comps = this._getComps([testSites]);
     
         return (
             <div className="col col-md-7 col-sm-7">
