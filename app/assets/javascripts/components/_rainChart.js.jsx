@@ -48,6 +48,14 @@ const RainChart = React.createClass({
         
         return comps;
     },
+    _getRainfallHeading(){
+        // if we have more than one rainfall table, label them by zipcode
+        if (this.props.tables > 1) {
+            return ("Rainfall for " + this.props.sites[0].zipcode);
+        }
+        
+        return "Rainfall";
+    },
     componentWillMount(){
         this._sortSites();  
     },
@@ -62,7 +70,7 @@ const RainChart = React.createClass({
         
         return (
         	<div className="chart-panel">
-        		<h2 className="zip-title">Rainfall for {this.props.sites[0].zipcode}</h2>
+        		<h2 className="zip-title">{this._getRainfallHeading()}</h2>
         		<table className="rain-table">
         			
         			<ChartHeading descTogg={this._handleDescToggle}></ChartHeading>

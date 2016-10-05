@@ -18,29 +18,22 @@ var counter = 0;
 
 // **********************************************************************
 
-// const Body = ({sites}) => (
-//      <div className="col col-md-7 col-sm-7">
-//           <RainChart sites={sites}></RainChart> 
-//      </div>
-//   );
-
 const Body = React.createClass({
     _sortSitesByZip(){
         var zipSites = [];
-    
         // for each zip code, return the sites assigned to that zipcode
         zipSites = zipList.map(zCode => (testSites.filter(site => (site.zipcode === zCode))));
-        
         // returns the sites as 2d array divided by zip code
         return zipSites;
     },
     getInitialState(){
         return {
-            zipDivide: true,
+            zipDivide: false,
             
         };
     },
     _getSiteList(){
+        // if we are dividing sites by zip code sort them, otherwise return the untouched sites
         if (this.state.zipDivide) {
             return this._sortSitesByZip();
         }
@@ -48,12 +41,16 @@ const Body = React.createClass({
         return [testSites];
     },
     _getComps() {
-        let components = this._getSiteList().map(zipGroup => {
+        // create rain charts for each array of sites provided
+        var siteList = this._getSiteList();
+        
+        let components = siteList.map(zipGroup => {
            let zip = zipGroup[0].zipcode;
+           var length = siteList.length;
            var key = zip + "chart";
 
            return (
-                <RainChart sites={zipGroup} key={key}></RainChart>
+                <RainChart tables={length} sites={zipGroup} key={key}></RainChart>
             );
         });
         
