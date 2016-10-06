@@ -42,7 +42,7 @@ class JobSitesController < ApplicationController
             @job.each do |jb|
             lat = jb.latitude
             lon = jb.longitude
-            sleep(1)
+            
             coordinates = "#{lat}, #{lon}"
             uri = URI('https://earthnetworks.azure-api.net/data/observations/v1/current?')
             uri.query = URI.encode_www_form({

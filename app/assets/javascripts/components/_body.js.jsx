@@ -14,7 +14,6 @@ var testSites = [
         ];
         
 var zipList = [89118, 89312];
-var counter = 0;
 
 // **********************************************************************
 
@@ -28,7 +27,7 @@ const Body = React.createClass({
     },
     getInitialState(){
         return {
-            zipDivide: false,
+            zipDivide: true,
             
         };
     },
@@ -65,4 +64,4 @@ const Body = React.createClass({
             </div>
         );
     }
-})
+});
