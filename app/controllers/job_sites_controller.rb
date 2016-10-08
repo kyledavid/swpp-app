@@ -36,6 +36,11 @@ class JobSitesController < ApplicationController
 =end 
 
   @date = params[:date]
+  
+  unless @date
+    @date = Time.now.strftime("%B %d %Y")
+  end
+  
   @job = JobSite.all
   @jjb = JobSite.where(:id => "4")
             @job.each do |jb|
