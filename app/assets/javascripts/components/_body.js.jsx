@@ -59,8 +59,10 @@ const Body = React.createClass({
         var comps = this._getComps([testSites]);
     
         return (
-            <div className="col col-md-7 col-sm-7">
-                {comps}
+            <div>
+                <div className="col col-md-7 col-sm-7">
+                    {comps}
+                </div>
             </div>
         );
     }

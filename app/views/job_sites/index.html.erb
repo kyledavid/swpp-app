@@ -6,11 +6,11 @@
 <body>
 	
 	<%= render 'header' %>
-	<% date = Date.parse('september 30 2016') %>
+	<%= dateFormatted = Date.parse(@date) %>
 
 	<% @job.each do |job_site| %>
 
-			<% @rainList = @rain.where(:job_sites_id => job_site.id).where(created_at: date.midnight..date.end_of_day)
+			<% @rainList = @rain.where(:job_sites_id => job_site.id).where(created_at: dateFormatted.midnight..dateFormatted.end_of_day)
 				.last(6).collect { |obj| obj.amount } %>
 
 	      	
@@ -24,7 +24,7 @@
 		<section class="container">
 	
 			  <div class="row">
-			    
+			    <%= render 'calendar' %>
 			    <%= react_component 'Main', { sites: @job, rains: @rain } %>
 			  </div><!-- row -->
 	      

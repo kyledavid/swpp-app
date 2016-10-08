@@ -35,8 +35,7 @@ class JobSitesController < ApplicationController
            @job = JobSite.all
 =end 
 
-
-
+  @date = params[:date]
   @job = JobSite.all
   @jjb = JobSite.where(:id => "4")
             @job.each do |jb|

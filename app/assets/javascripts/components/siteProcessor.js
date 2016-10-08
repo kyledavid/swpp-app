@@ -1,4 +1,5 @@
 // collect the rain data stored in the DOM
+
 var siteProcessor = (function(){
     
     var collateSiteData = function(sites) {
