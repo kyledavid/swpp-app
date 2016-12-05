@@ -32,8 +32,7 @@ class JobSite < ActiveRecord::Base
            results = JSON.parse(response.body)
            @input = Rain.new(:amount => results['rainRate'], :job_sites_id => jb.id )
            @input.save
-           sleep(4)
-
+           sleep(2)
          end
         
     end
