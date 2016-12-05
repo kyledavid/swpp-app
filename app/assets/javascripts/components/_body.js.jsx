@@ -13,7 +13,7 @@ var testSites = [
             {name: ' tstffta house', address: '6263 rainless ave, 89312', rain: null, zipcode: 89312},
         ];
         
-var zipList = [89118, 89312];
+
 
 // **********************************************************************
 
@@ -21,14 +21,14 @@ const Body = React.createClass({
     _sortSitesByZip(){
         var zipSites = [];
         // for each zip code, return the sites assigned to that zipcode
-        zipSites = zipList.map(zCode => (testSites.filter(site => (site.zipcode === zCode))));
+        zipSites = this.props.zipList.map(zCode => (testSites.filter(site => (site.zipcode === zCode)))).filter( arrVal => (arrVal.length));
         // returns the sites as 2d array divided by zip code
+        console.log(zipSites);
         return zipSites;
     },
     getInitialState(){
         return {
             zipDivide: true,
-            
         };
     },
     _getSiteList(){

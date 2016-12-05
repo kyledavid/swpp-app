@@ -12,7 +12,6 @@
 
 			<% @rainList = @rain.where(:job_sites_id => job_site.id).where(created_at: dateFormatted.midnight..dateFormatted.end_of_day)
 				.last(6).collect { |obj| obj.amount } %>
-
 	      	
       	<%= content_tag 'div',style: 'display: none', class: 'rains', data: {:rain=> @rainList, :site_id=> job_site.id} do %>
       		rsatras
