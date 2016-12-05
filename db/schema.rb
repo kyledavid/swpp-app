@@ -23,7 +23,10 @@ ActiveRecord::Schema.define(version: 20160924180408) do
     t.string   "abbr"
     t.float    "latitude"
     t.float    "longitude"
+    t.integer  "rains_id"
   end
+
+  add_index "job_sites", ["rains_id"], name: "index_job_sites_on_rains_id"
 
   create_table "rains", force: :cascade do |t|
     t.string   "amount"
@@ -33,10 +36,5 @@ ActiveRecord::Schema.define(version: 20160924180408) do
   end
 
   add_index "rains", ["job_sites_id"], name: "index_rains_on_job_sites_id"
-
-  create_table "sites", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
 end

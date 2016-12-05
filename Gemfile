@@ -3,7 +3,9 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
-
+# Gemfile
+# Use React for Reacting
+gem 'react-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -16,6 +18,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'geocoder'
 #for parsing json strings
 gem 'json'
+gem 'jquery-ui-rails'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

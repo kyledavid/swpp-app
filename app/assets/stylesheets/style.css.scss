@@ -15,21 +15,7 @@
 /*=====================
 	#1 Fonts
 =======================*/
-@font-face {
-  font-family: 'Langdon';
-  src: font-url('langdon.otf'); }
 
-@font-face {
-  font-family: "Lato-Light";
-  src: font-url('Lato-Light.ttf'); }
-
-@font-face {
-  font-family: "Lato-Regular";
-  src: font-url('Lato-Regular.ttf'); }
-
-@font-face {
-  font-family: "Lato-Bold";
-  src: font-url('Lato-Bold.ttf'); }
 
 /*=====================
 	#2 Header
@@ -119,6 +105,16 @@ table.rain-table {
     font-weight: 800;
     font-size: 20px;
     color: #85d8ff; }
+    
+  .untouchable {
+    cursor: default;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 
 /*=====================
 	#3.2 Calendar
