@@ -3,14 +3,14 @@
 // ************** USE TO TEST FRONT END SORTING ***********************
 
 var testSites = [
-            {name: 'buntu', address: '2383 butt strt, 89118', rain: .2, zipcode: 89118},
-            {name: 'art', address: '2355 tf, 89118', rain: .1, zipcode: 89118},
-            {name: ' ARST house', address: '727 rainless ave, 89118', rain: null, zipcode: 89118},
-            {name: 'wtftff', address: '2383 tarf strt, 89118', rain: .7, zipcode: 89118},
-            {name: 'tsvx', address: '234 butt strt, 89312', rain: .4, zipcode: 89312},
-            {name: 'wffff', address: '2383 arst strt, 89118', rain: .5, zipcode: 89118},
-            {name: ' rain house', address: '2383 rainless ave, 89312', rain: null, zipcode: 89312},
-            {name: ' tstffta house', address: '6263 rainless ave, 89312', rain: null, zipcode: 89312},
+            {name: 'Aces & Ales', address: '2801 N Tenaya Way, 89118', rain: .2, zipcode: 89118},
+            {name: 'Hop Nuts Brewing', address: '1120 S Main St, 89118', rain: .1, zipcode: 89118},
+            {name: 'Sin City Brewing Company', address: '3377 Las Vegas Blvd, 89118', rain: null, zipcode: 89118},
+            {name: 'Tenaya Creek Brewery', address: '831 W. Bonanza Rd, 89118', rain: .7, zipcode: 89118},
+            {name: 'Ellis Island Casino & Brewery', address: '4178 Koval Ln, 89312', rain: .4, zipcode: 89312},
+            {name: 'Village Pub & Poker', address: '2301 E Sunset Rd, 89118', rain: .5, zipcode: 89118},
+            {name: 'Bad Beat Brewing', address: '7380 Eastgate Rd, 89312', rain: null, zipcode: 89312},
+            {name: 'Mothership Coffee', address: '2708 N Green Valley Pkwy, 89312', rain: null, zipcode: 89312},
         ];
         
 
@@ -57,7 +57,7 @@ const Body = React.createClass({
     },
     render() {
         var comps = this._getComps([testSites]);
-    
+        
         return (
             <div>
                 <div className="col col-md-7 col-sm-7">

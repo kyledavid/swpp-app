@@ -8,6 +8,11 @@ var siteProcessor = (function(){
         // for each rain element return the rain and id values in a new javascript object
         var rainOfSites = Array.prototype.map.call(rains, obj => ({rain: JSON.parse(obj.dataset.rain), id: JSON.parse(obj.dataset.siteId)}));
         // combine the harvested rain values with the appropriate job sites
+        console.log("Rain of Sites:");
+
+        if (rainOfSites[0].rain.length === 0) {
+            return 'No data found';
+        }
         return addRainToSites(sites, rainOfSites);
     }
     
