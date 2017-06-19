@@ -1,6 +1,6 @@
 // app/assets/javascripts/components/_main.js.jsx 
 
-// ************** USE TO TEST FRONT END SORTING ***********************
+// ************** USE TO TEST FRONT END SORTING **************
 
 var testSites = [
             {name: 'Aces & Ales', address: '2801 N Tenaya Way, 89118', rain: .2, zipcode: 89118},
@@ -15,7 +15,7 @@ var testSites = [
         
 
 
-// **********************************************************************
+// ************************************************************
 
 const Body = React.createClass({
     _sortSitesByZip(){

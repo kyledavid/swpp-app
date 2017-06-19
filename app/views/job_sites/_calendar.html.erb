@@ -1,7 +1,8 @@
+
 <div class="col col-sm-5">
 	<div class="calendar-panel">
-		<h2 class="date">Rainfall for 
-			<span id="selected-date">Today 8/28/2016</span>
+		<h2 class="date">
+			<span id="selected-date"></span>
 		</h2>
 		<form method="get" action="https://swppp-app-kyledavid.c9users.io/">
 			<input type="hidden" id="hidden-date" name="date">
@@ -21,3 +22,22 @@
 	
 	</div><!-- calendar panel -->
 </div><!-- col -->
+<script>
+	function getQueryVariable(variable)
+	{
+	       var query = window.location.search.substring(1);
+	       var vars = query.split("&");
+	       for (var i=0;i<vars.length;i++) {
+	               var pair = vars[i].split("=");
+	               if(pair[0] == variable){return pair[1];}
+	       }
+	       return(false);
+	}
+	
+	var todaysDate = getQueryVariable('date');
+	
+	todaysDate = todaysDate.replace(/\+/g, '/');
+	
+	document.getElementById('selected-date').textContent = "Rainfall for " + todaysDate;
+	
+</script>
