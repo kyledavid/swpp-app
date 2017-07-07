@@ -42,7 +42,9 @@ const Body = React.createClass({
     _getComps() {
         // create rain charts for each array of sites provided
         var siteList = this._getSiteList();
-        
+        if (!this.props.includesData) {
+            return <NoData />;
+        }
         let components = siteList.map(zipGroup => {
            let zip = zipGroup[0].zipcode;
            var length = siteList.length;
