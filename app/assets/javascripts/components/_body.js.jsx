@@ -58,7 +58,7 @@ const Body = React.createClass({
         return components;
     },
     render() {
-        var comps = this._getComps([testSites]);
+        var comps = this._getComps(this.props.sites);
         
         return (
             <div>

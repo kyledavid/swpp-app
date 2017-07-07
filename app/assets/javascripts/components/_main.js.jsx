@@ -7,7 +7,7 @@ const Main = ({sites}) => {
     let includesData;
     
     formattedSites === "No data found" ? includesData = false : includesData = true;
-    
+    console.log(formattedSites);
     return (
         <div>
             <Body sites={formattedSites} zipList={zipList} includesData={includesData}></Body>

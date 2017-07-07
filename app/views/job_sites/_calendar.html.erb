@@ -10,7 +10,7 @@
 					 
 					<script>
 					$( "#datepicker" ).datepicker( {
-						dateFormat: 'MM dd yy',
+						dateFormat: 'MM d, yy',
 						onSelect: function(date) {
 							$("#hidden-date").val(date);
 						}
@@ -35,8 +35,12 @@
 	}
 	
 	var todaysDate = getQueryVariable('date');
+	let jDate = new Date();
+	let dateOptions = {year: 'numeric', month: 'long', day: 'numeric',};
 	
-	todaysDate = todaysDate.replace(/\+/g, '/');
+	todaysDate === false ? todaysDate = jDate.toLocaleDateString("en-US", dateOptions) : todaysDate = todaysDate.replace(/\+/g, ' ').replace(/%2C/g, ',');
+	
+	console.log(todaysDate);
 	
 	document.getElementById('selected-date').textContent = "Rainfall for " + todaysDate;
 	
