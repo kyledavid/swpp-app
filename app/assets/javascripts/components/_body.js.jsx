@@ -18,20 +18,19 @@ var testSites = [
 // ************************************************************
 
 const Body = React.createClass({
-    _getRainTablesByZip(siteList) {
+    _getRainTablesByZip() {
         // create rain charts for each array of sites provided
-        var siteList = this._getSiteList();
+        let siteList = this._getSiteList();
         
         return (
             siteList.map(zipGroup => {
-            let zip = zipGroup[0].zipcode;
-            var length = siteList.length;
-            var key = zip + "chart";
-
-            return (
-                <RainChart tables={length} sites={zipGroup} key={key}></RainChart>
-            );
-            
+                let zip = zipGroup[0].zipcode;
+                let length = siteList.length;
+                let key = zip + "chart";
+    
+                return (
+                    <RainChart tables={length} sites={zipGroup} key={key}></RainChart>
+                );
             })  
         );
     },
