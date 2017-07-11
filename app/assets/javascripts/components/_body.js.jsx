@@ -18,6 +18,23 @@ var testSites = [
 // ************************************************************
 
 const Body = React.createClass({
+    _getRainTablesByZip(siteList) {
+        // create rain charts for each array of sites provided
+        var siteList = this._getSiteList();
+        
+        return (
+            siteList.map(zipGroup => {
+            let zip = zipGroup[0].zipcode;
+            var length = siteList.length;
+            var key = zip + "chart";
+
+            return (
+                <RainChart tables={length} sites={zipGroup} key={key}></RainChart>
+            );
+            
+            })  
+        );
+    },
     _sortSitesByZip(){
         var zipSites = [];
         // for each zip code, return the sites assigned to that zipcode
@@ -40,22 +57,11 @@ const Body = React.createClass({
         return [testSites];
     },
     _getComps() {
-        // create rain charts for each array of sites provided
-        var siteList = this._getSiteList();
         if (!this.props.includesData) {
             return <NoData />;
         }
-        let components = siteList.map(zipGroup => {
-           let zip = zipGroup[0].zipcode;
-           var length = siteList.length;
-           var key = zip + "chart";
-
-           return (
-                <RainChart tables={length} sites={zipGroup} key={key}></RainChart>
-            );
-        });
         
-        return components;
+        return this._getRainTablesByZip();
     },
     render() {
         var comps = this._getComps(this.props.sites);
